@@ -1,0 +1,30 @@
+Crear una clase PiramidePlus
+
+Atributos:
+
+- nombre (string)
+- altura (>=0)
+- Carácter con el que se va a pintar el borde
+- Carácter con el que se va a pintar el relleno
+- Orientacion (string)
+
+
+Métodos:
+
+- Constructores a los que se les pasa:
+  -- nombre, altura
+  -- nombre, altura, orientacion
+  -- nombre, altura, orientacion, caracter borde
+  -- nombre, altura, orientacion, caracter borde, caracter relleno
+- cambiar el carácter
+- cambiar la altura
+- toString
+
+
+Si no se especifican caracteres para el borde y/o relleno, se entenderá que el carácter del borde es "*" y el relleno es de
+espacios en blanco.
+
+Desde el programa principal: 
+- pedir los datos para un par de pirámides
+- crear los objetos correspondientes
+- vizualizar por consola las dos pirámides
