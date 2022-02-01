@@ -1,0 +1,16 @@
+Crear un programa que mantega una base de datos de poblaciones y personas que las habitan.
+
+Clases:
+PERSONA: DNI, nombre
+         Constructor: inicializa todos los atributos
+         toString
+
+
+POBLACION: Nombre, capacidad máxima de personas, array con las personas que la habitan
+          Constructor: inicializa el nombre; la capacidad máxima inicial es 10 e inicialmente no hay  nadie
+          toString: devuelve el nombre de la población y los nombres y dnis de sus habitantes
+          BuscarPersona: a partir de un DNI, nos devolverá la persona
+          AñadirHabitante: si hay sitio, se añade a la persona que se pasa por parámetro
+          Habitantes: devuelve el nº de habitantes que hay
+          SitiosLibres: devuelve el nº de sitios libres en la población
+          Emigrar: A partir de un DNI y de una población que se pasa como argumento, se pasa al habitante cuyo dni esté en la población argumento a la población que recibe el método.
