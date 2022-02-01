@@ -8,7 +8,7 @@ PERSONA: DNI, nombre
 
 POBLACION: Nombre, capacidad máxima de personas, array con las personas que la habitan, cantidad de habitantes actual
           Constructor: inicializa el nombre; la capacidad máxima inicial es 10 e inicialmente no hay  nadie
-          toString: devuelve el nombre de la población y los nombres y dnis de sus habitantes
+          toString: devuelve el nombre de la población y "los nombres y dnis de sus habitantes" (tostring de persona)
           BuscarPersona: a partir de un DNI, nos devolverá la persona
           AñadirHabitante: si hay sitio, se añade a la persona que se pasa por parámetro
           Habitantes: devuelve el nº de habitantes que hay
