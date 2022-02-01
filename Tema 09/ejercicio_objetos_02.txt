@@ -6,7 +6,7 @@ PERSONA: DNI, nombre
           toString
 
 
-POBLACION: Nombre, capacidad máxima de personas, array con las personas que la habitan
+POBLACION: Nombre, capacidad máxima de personas, array con las personas que la habitan, cantidad de habitantes actual
           Constructor: inicializa el nombre; la capacidad máxima inicial es 10 e inicialmente no hay  nadie
           toString: devuelve el nombre de la población y los nombres y dnis de sus habitantes
           BuscarPersona: a partir de un DNI, nos devolverá la persona
