@@ -16,7 +16,7 @@
         <%
           for (int i=0; i<10; i++) {
         %>
-            <% out.print("<b>Hola"+i+"</b><br>");%>
+        <b>Hola<% out.print(i);%></b><br>
         <%
           }
           
