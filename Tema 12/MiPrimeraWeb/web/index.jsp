@@ -21,5 +21,6 @@
           }
           
         %>
+        <a href="tabla.jsp">Enlace a tabla.jsp</a>
     </body>
 </html>
