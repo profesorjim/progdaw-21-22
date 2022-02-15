@@ -22,5 +22,11 @@
           
         %>
         <a href="tabla.jsp">Enlace a tabla.jsp</a>
+        <p><br>
+        <form action="procesar.jsp" method="POST">
+            Introduzca un dato:
+            <input type="text" name="dato1"><br>
+            <button type="submit">Enviar dato</button>
+        </form>
     </body>
 </html>
