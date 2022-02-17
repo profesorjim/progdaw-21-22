@@ -15,12 +15,15 @@ and open the template in the editor.
     <body>
         <%
           request.setCharacterEncoding("UTF-8");
-          float euros0 = Float.parseFloat(request.getParameter("euros0"));
+          float euros0=0.0f;
+          if (request.getParameter("euros0")!=null) {
+             euros0= Float.parseFloat(request.getParameter("euros0"));
+          }
 
         %>
         <div>
             <form action="conversor.jsp" method="POST">
-                Cantidad en €: <input type="text" name="euros" value="98"><br>
+                Cantidad en €: <input type="text" name="euros" value="<%=euros0%>"><br>
                 <button type="submit">Convertir</button>
             </form>
         </div>
