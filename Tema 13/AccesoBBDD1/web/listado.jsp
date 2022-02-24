@@ -22,17 +22,26 @@
           Class.forName("com.mysql.jdbc.Driver");
           Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/prueba","admin", "admin");
           Statement s = conexion.createStatement();
-          ResultSet listado = s.executeQuery ("SELECT DNI,Nombre FROM gente");
+          
+          
+          String dniFormulario = request.getParameter("dni");  
+          
+          
+          ResultSet listado = s.executeQuery ("SELECT * FROM gente WHERE DNI='"+dniFormulario+"'");
           
           out.println ("<table border=1>");
-          out.println ("<tr><th>DNI</th><th>Nombre</th></tr>");
+          out.println ("<tr><th>DNI</th><th>Nombre</th><th>Apellido 1</th><th>Apellido 2</th></tr>");
           while (listado.next()) {
-              out.println("<tr><td>"+listado.getString("DNI") + "</td><td>" +listado.getString("Nombre") +"</td></tr>");
+              out.println("<tr><td>"+listado.getString("DNI") +"</td><td>" 
+                      +listado.getString("Nombre") +"</td><td>"
+                      +listado.getString("Apellido1") +"</td><td>"
+                      +listado.getString("Apellido2") +"</td></tr>");
               
           
           }
           out.println ("</table>");
           conexion.close();
           %>
+          <a href="selector.jsp"> Ir al selector</a>
     </body>
 </html>

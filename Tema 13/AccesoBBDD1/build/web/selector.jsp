@@ -16,22 +16,22 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Seleccione el DNI</h1>
         <%
           request.setCharacterEncoding("UTF-8");
           Class.forName("com.mysql.jdbc.Driver");
           Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/prueba","admin", "admin");
           Statement s = conexion.createStatement();
-          ResultSet listado = s.executeQuery ("SELECT DNI,Nombre FROM gente");
+          ResultSet listado = s.executeQuery ("SELECT DNI FROM gente");
           
-          out.println ("<table border=1>");
-          out.println ("<tr><th>DNI</th><th>Nombre</th></tr>");
+          out.print ("<form name=\"selector\" action=\"listado.jsp\" method=\"POST\">");
+          out.print("<select name=\"dni\">");
           while (listado.next()) {
-              out.println("<tr><td>"+listado.getString("DNI") + "</td><td>" +listado.getString("Nombre") +"</td></tr>");
-              
-          
+              out.println("<option value=\""+listado.getString("DNI")+"\">"+listado.getString("DNI")+"</option>\n");          
           }
-          out.println ("</table>");
+          out.println("</select><br>");
+          out.println ("<button type=\"submit\">Enviar</button>");
+          out.print ("</form>");
           conexion.close();
           %>
     </body>

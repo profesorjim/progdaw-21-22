@@ -19,7 +19,7 @@
         <h1>Hello World!</h1>
         <%
           request.setCharacterEncoding("UTF-8");
-          //Class.forName("com.mysql.jdbc.Driver");
+          Class.forName("com.mysql.jdbc.Driver");
           Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/prueba","admin", "admin");
           Statement s = conexion.createStatement();
           ResultSet listado = s.executeQuery ("SELECT DNI,Nombre FROM gente");
