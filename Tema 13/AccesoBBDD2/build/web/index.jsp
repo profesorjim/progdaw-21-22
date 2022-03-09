@@ -20,7 +20,7 @@
         <%
           request.setCharacterEncoding("UTF-8");
           Class.forName("com.mysql.jdbc.Driver");
-          Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/prueba","admin", "admin");
+          Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/prueba","prueba", "prueba");
           Statement s = conexion.createStatement();
           ResultSet listado = s.executeQuery ("SELECT DNI,Nombre FROM gente");
           
@@ -35,6 +35,8 @@
           conexion.close();
           %>
           <a href="selector.jsp">Selección individualizada</a><br>
-          <a href="forminsert.html">Insertar nueva persona</a>
+          <a href="forminsert.html">Insertar nueva persona</a><br>
+          <a href="selectorborrado.jsp">Borrar persona</a><br>
+          <a href="selectorupdate.jsp">Actualizar persona</a><br>
     </body>
 </html>

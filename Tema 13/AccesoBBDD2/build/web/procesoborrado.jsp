@@ -20,23 +20,30 @@
         <%
           request.setCharacterEncoding("UTF-8");
           Class.forName("com.mysql.jdbc.Driver");
-          Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/prueba","prueba", "prueba");
+          Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/prueba","admin", "admin");
           Statement s = conexion.createStatement();
-          ResultSet listado = s.executeQuery ("SELECT DNI,Nombre FROM gente");
+          
+          
+          String dniFormulario = request.getParameter("dni");  
+          
+          s.execute("DELETE FROM gente WHERE DNI='"+dniFormulario+"'");
+          
+          
+          ResultSet listado = s.executeQuery ("SELECT * FROM gente");
           
           out.println ("<table border=1>");
-          out.println ("<tr><th>DNI</th><th>Nombre</th></tr>");
+          out.println ("<tr><th>DNI</th><th>Nombre</th><th>Apellido 1</th><th>Apellido 2</th></tr>");
           while (listado.next()) {
-              out.println("<tr><td>"+listado.getString("DNI") + "</td><td>" +listado.getString("Nombre") +"</td></tr>");
+              out.println("<tr><td>"+listado.getString("DNI") +"</td><td>" 
+                      +listado.getString("Nombre") +"</td><td>"
+                      +listado.getString("Apellido1") +"</td><td>"
+                      +listado.getString("Apellido2") +"</td></tr>");
               
           
           }
           out.println ("</table>");
           conexion.close();
           %>
-          <a href="selector.jsp">Selección individualizada</a><br>
-          <a href="forminsert.html">Insertar nueva persona</a><br>
-          <a href="selectorborrado.jsp">Borrar persona</a><br>
-          <a href="selectorupdate.jsp">Actualizar persona</a><br>
+          <a href="index.jsp"> Ir al principio</a>
     </body>
 </html>
