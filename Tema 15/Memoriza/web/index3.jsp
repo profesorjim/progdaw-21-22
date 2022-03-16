@@ -4,6 +4,8 @@
     Author     : usuario
 --%>
 
+<%@page import="java.util.ArrayList"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,25 +14,35 @@
         <title>Memorión</title>
     </head>
     <body>
+        <form action="#" method="post">
+            <input type="hidden" name="reset" value=1>
+            <button type="submit">Resetear memoria</button>
+        </form><br>
         <%
           String frase="";
-          String memorion="";
+          ArrayList<String> memorion;
           
-          memorion=(String)session.getAttribute("memorion");
+          if (request.getParameter("reset")!=null) {
+            session.invalidate();
+            session = request.getSession(true);
+            
+          }
+          
+          memorion=(ArrayList<String>)session.getAttribute("memorion");
           
           
           frase = request.getParameter("frase")==null?"":request.getParameter("frase");
 
+          
           if (memorion==null) {
-            memorion="";
+            memorion= new ArrayList<String>();
           } else {
             
             if (!frase.equals("")) {
-                memorion = memorion + frase + "<br>";                        
+                memorion.add(frase);
             }
           }
-          
-           session.setAttribute("memorion", memorion);
+          session.setAttribute("memorion", memorion);
           
           
           %>
@@ -41,10 +53,9 @@
         </form>
         <%
           
-          
-          
-            out.print(memorion);
-
+          for (String s:memorion) {
+            out.print(s+"<br>");
+          }
 
           %>
     </body>
