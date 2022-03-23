@@ -15,6 +15,8 @@
   </head>
   <body>
     <h1>Comida sana</h1>
+    Se propone al alumnado que incorpore un par de clases más, Pedido y LineaPedido, para su
+    uso en el script pedido.jsp
     <%
       ArrayList<Producto> misProductos = new ArrayList<Producto>();
       misProductos.add(new Producto("Hamburguesa vegetariana",6.20f,"comida","hamburguesa.png","imagenes"));
@@ -32,20 +34,33 @@
       <table>
         <tr>
         <%
-          for (int i=0; i<misProductos.size() && misProductos.get(i).getTipo().equals("comida"); i++) {
+          int i;
+          for (i=0; i<misProductos.size() && misProductos.get(i).getTipo().equals("comida"); i++) {
             %>
             <td>
               <%=misProductos.get(i).toIMG()%><br>
               <%=misProductos.get(i).getNombre()%><br>
+              <input type="number" name="cantidad<%=i%>" value="0">
               
             </td>
             <%
           }
           %>
         </tr><tr>
-          
+          <%
+            for (;i<misProductos.size(); i++) {
+              %>
+              <td>
+                <%=misProductos.get(i).toIMG()%><br>
+                <%=misProductos.get(i).getNombre()%><br>
+                <input type="number" name="cantidad<%=i%>" value="0">
+              </td>
+              <%            
+            }
+            %>
         </tr>
       </table>
+        <button type="submit">Hacer pedido</button>
       </form>
   </body>
 </html>
