@@ -23,16 +23,32 @@
       Class.forName("com.mysql.jdbc.Driver");
       Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/Ciclo","admin", "admin");
       Statement s = conexion.createStatement();
+      Statement q = conexion.createStatement();
+      Statement r = conexion.createStatement();
       
-      ResultSet alumnos = s.executeQuery("SELECT Nombre from Alumnos WHERE IDAL="+request.getParameter("IDAL"));
+      if (request.getParameter("IDAL")!=null) {
+        session.setAttribute("alumno",request.getParameter("IDAL"));
+      }
+      
+      String alumno = (String)(session.getAttribute("alumno"));
+      
+      ResultSet alumnos = s.executeQuery("SELECT Nombre from Alumnos WHERE IDAL="+alumno);
       
       alumnos.next();
+      
+      //procesar insercion
+      
+      if (request.getParameter("nuevoModulo")!=null) {
+        r.execute("INSERT INTO Matriculas (IDAL,IDMOD) VALUES ("+alumno+","+request.getParameter("nuevoModulo")+")");
+      }
       
       //obtención del primer atributo del resultset 
       //en este caso, sería equivalente a getString("Nombre")
       out.print("<h1>"+alumnos.getString(1)+"</h1>");
       
-      ResultSet modulos = s.executeQuery("SELECT IDMATR,Matriculas.IDAL,Matriculas.IDMOD,NombreModulo from Matriculas INNER JOIN Modulos ON Matriculas.IDMOD=Modulos.IDMOD WHERE IDAL="+request.getParameter("IDAL"));
+      ResultSet modulos = s.executeQuery("SELECT IDMATR,Matriculas.IDAL,Matriculas.IDMOD,NombreModulo from Matriculas INNER JOIN Modulos ON Matriculas.IDMOD=Modulos.IDMOD WHERE IDAL="+alumno);
+      
+      ResultSet todosModulos = q.executeQuery("SELECT * FROM Modulos WHERE IDMOD NOT IN (SELECT IDMOD from Matriculas WHERE IDAL="+alumno+")");
       
       out.print("<table border=1>");
       
@@ -46,6 +62,23 @@
         <%
         out.println("</tr>");
       }
+      %>
+      <tr>
+        <td></td><td></td><td></td>
+        <td>
+          <form action="#" method="post">
+            <select name="nuevoModulo">
+              <%
+                while (todosModulos.next()) {
+                  out.print("<option value=\""+todosModulos.getString("IDMOD")+"\">"+todosModulos.getString("NombreModulo")+"</option>");
+                }
+              %>
+            </select>
+            <button type="submit">Nueva matrícula</button>
+          </form>
+        </td>
+      </tr>
+      <%
       out.println("</table>");
 
     %>
