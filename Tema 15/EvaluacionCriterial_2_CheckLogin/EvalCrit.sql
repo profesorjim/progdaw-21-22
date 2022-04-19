@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `EvalCrit`
+-- Database: `EvalCritCheckLogin`
 --
-CREATE DATABASE IF NOT EXISTS `EvalCrit` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
-USE `EvalCrit`;
+CREATE DATABASE IF NOT EXISTS `EvalCritCheckLogin` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `EvalCritCheckLogin`;
 
 -- --------------------------------------------------------
 
