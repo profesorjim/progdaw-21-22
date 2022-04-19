@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 22, 2022 at 09:03 PM
+-- Generation Time: Apr 19, 2022 at 11:53 AM
 -- Server version: 10.1.48-MariaDB-0+deb9u2
 -- PHP Version: 7.0.33-0+deb9u10
 
@@ -41,9 +41,9 @@ CREATE TABLE `CCEE` (
 --
 
 INSERT INTO `CCEE` (`IDCE`, `IDRARef`, `CriterioEvaluacion`, `PesoGlobal`) VALUES
-(1, 1, 'a) Se han identificado los bloques que componen la estructura de un programa informático.', 0),
+(1, 1, 'a) Se han identificado los bloques que componen la estructura de un programa informático.', 3),
 (2, 1, 'b) Se han creado proyectos de desarrollo de aplicaciones.', 0),
-(3, 1, 'c) Se han utilizado entornos integrados de desarrollo.', 3),
+(3, 1, 'c) Se han utilizado entornos integrados de desarrollo.', 4),
 (4, 1, 'd) Se han identificado los distintos tipos de variables y la utilidad específica de cada uno.', 0),
 (5, 1, 'e) Se ha modificado el código de un programa para crear y utilizar variables.', 0),
 (6, 1, 'f) Se han creado y utilizado constantes y literales.', 0),
@@ -144,6 +144,26 @@ INSERT INTO `RRAA` (`IDRA`, `ResultadoAprendizaje`) VALUES
 (8, '8. Utiliza bases de datos orientadas a objetos, analizando sus características y aplicando técnicas para mantener la persistencia de la información.\r\n'),
 (9, '9. Gestiona información almacenada en bases de datos relacionales manteniendo la integridad y consistencia de los datos\r\n');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Usuarios`
+--
+
+DROP TABLE IF EXISTS `Usuarios`;
+CREATE TABLE `Usuarios` (
+  `Usuario` varchar(30) COLLATE utf8_bin NOT NULL,
+  `Contrasenia` varchar(255) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `Usuarios`
+--
+
+INSERT INTO `Usuarios` (`Usuario`, `Contrasenia`) VALUES
+('usuario1', 'usuario1'),
+('usuario2', 'usuario2');
+
 --
 -- Indexes for dumped tables
 --
@@ -160,6 +180,12 @@ ALTER TABLE `CCEE`
 --
 ALTER TABLE `RRAA`
   ADD PRIMARY KEY (`IDRA`);
+
+--
+-- Indexes for table `Usuarios`
+--
+ALTER TABLE `Usuarios`
+  ADD PRIMARY KEY (`Usuario`);
 
 --
 -- AUTO_INCREMENT for dumped tables
