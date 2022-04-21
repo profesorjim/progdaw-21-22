@@ -5,5 +5,11 @@
         <group>
             <file>file:/home/usuario/NetBeansProjects/EvaluacionCriterial_2_CheckLogin/web/checkLogin.jsp</file>
         </group>
+        <group name="Clases">
+            <file>file:/home/usuario/NetBeansAlumnos/Clases/EvaluacionCriterial_2_CheckLogin/web/rraa.jsp</file>
+            <file>file:/home/usuario/NetBeansAlumnos/Clases/EvaluacionCriterial_2_CheckLogin/web/login.jsp</file>
+            <file>file:/home/usuario/NetBeansAlumnos/Clases/EvaluacionCriterial_2_CheckLogin/web/index.jsp</file>
+            <file>file:/home/usuario/NetBeansAlumnos/Clases/EvaluacionCriterial_2_CheckLogin/web/checkLogin.jsp</file>
+        </group>
     </open-files>
 </project-private>

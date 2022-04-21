@@ -5,6 +5,12 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 
+<%
+ if (session.getAttribute("usuario")!=null) {
+   response.sendRedirect("index.jsp");
+ }
+%>
+
 <html>
   <head>
     <title>EVALUACION CRITERIAL - LOGIN</title>
@@ -18,7 +24,6 @@
           Nombre de usuario: <input type="text" name="usuarioform"><br>
           Contraseña: <input type="password" name="contraseniaform"><br>
           <button type="submit">LogIn</button>
-          
         </form>    
   </body>
 </html>
