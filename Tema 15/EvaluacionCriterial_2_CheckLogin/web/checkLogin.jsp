@@ -21,7 +21,7 @@
         if (usuario!=null) {
           request.setCharacterEncoding("UTF-8");
           Class.forName("com.mysql.jdbc.Driver");
-          Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/EvalCritCheckLogin", "admin", "admin");
+          Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/Clases_EvalCritCheckLogin", "admin", "admin");
           Statement s = conexion.createStatement();
           
           //String consulta="SELECT * FROM Usuarios WHERE Usuario='"+usuario+"' AND Contrasenia='"+request.getParameter("contraseniaform")+"'";

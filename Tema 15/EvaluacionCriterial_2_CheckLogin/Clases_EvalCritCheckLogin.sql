@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 19, 2022 at 11:53 AM
+-- Generation Time: Apr 25, 2022 at 08:44 AM
 -- Server version: 10.1.48-MariaDB-0+deb9u2
--- PHP Version: 7.0.33-0+deb9u10
+-- PHP Version: 7.0.33-0+deb9u12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `EvalCritCheckLogin`
+-- Database: `Clases_EvalCritCheckLogin`
 --
-CREATE DATABASE IF NOT EXISTS `EvalCritCheckLogin` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
-USE `EvalCritCheckLogin`;
+CREATE DATABASE IF NOT EXISTS `Clases_EvalCritCheckLogin` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `Clases_EvalCritCheckLogin`;
 
 -- --------------------------------------------------------
 

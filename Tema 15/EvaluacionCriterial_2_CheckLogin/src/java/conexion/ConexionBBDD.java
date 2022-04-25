@@ -22,7 +22,7 @@ public class ConexionBBDD {
   
   public ConexionBBDD () throws ClassNotFoundException, SQLException {
     Class.forName("com.mysql.jdbc.Driver");
-    this.conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/EvalCritCheckLogin","admin", "admin");
+    this.conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/Clases_EvalCritCheckLogin","admin", "admin");
     this.s = conexion.createStatement();
   }
   

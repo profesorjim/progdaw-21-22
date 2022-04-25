@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 07, 2022 at 12:58 PM
+-- Generation Time: Apr 25, 2022 at 08:43 AM
 -- Server version: 10.1.48-MariaDB-0+deb9u2
--- PHP Version: 7.0.33-0+deb9u10
+-- PHP Version: 7.0.33-0+deb9u12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Ciclo`
+-- Database: `Clases_Ciclo`
 --
-CREATE DATABASE IF NOT EXISTS `Ciclo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `Ciclo`;
+CREATE DATABASE IF NOT EXISTS `Clases_Ciclo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `Clases_Ciclo`;
 
 -- --------------------------------------------------------
 

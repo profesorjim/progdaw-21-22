@@ -21,7 +21,7 @@
     <%
       
       Class.forName("com.mysql.jdbc.Driver");
-      Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/Ciclo","admin", "admin");
+      Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/Clases_Ciclo","admin", "admin");
       Statement s = conexion.createStatement();
       
       ResultSet alumnos = s.executeQuery("SELECT * from Alumnos");
